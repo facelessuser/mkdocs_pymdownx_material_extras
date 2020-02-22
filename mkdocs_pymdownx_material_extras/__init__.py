@@ -13,16 +13,17 @@ class PymdownxMaterialExtras(mkdocs.plugins.BasePlugin):
     def on_config(self, config, **kwargs):
         """Add additional assets."""
 
-        base_path = RESOURCE_PATH + '/'
 
         # Add our theme resources to the theme path.
         config['theme'].dirs.append(RESOURCE_PATH)
 
+        base_path = RESOURCE_PATH.replace('\\', '/') + '/'
+
         # Add our extra styles and JavaScript to be included in the template.
         config['extra_css'].extend(
-            [f.replace('\\', '/').replace(base_path, '') for f in glob.glob(base_path + '*.css')]
+            [f.replace('\\', '/').replace(base_path, '') for f in glob.glob(base_path + '**/*.css', recursive=True)]
         )
         config['extra_javascript'].extend(
-            [f.replace('\\', '/').replace(base_path, '') for f in glob.glob(base_path + '*.js')]
+            [f.replace('\\', '/').replace(base_path, '') for f in glob.glob(base_path + '**/*.js', recursive=True)]
         )
         return config
