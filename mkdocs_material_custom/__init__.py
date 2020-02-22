@@ -24,6 +24,10 @@ class MaterialCustom(mkdocs.plugins.BasePlugin):
     def on_config(self, config, **kwargs):
         """Add additional assets."""
 
-        config['extra_css'].extend(glob.glob(os.path.join(RESOURCE_PATH, '*.css').replace('\\', '/'), recursive=True))
-        config['extra_js'].extend(glob.glob(os.path.join(RESOURCE_PATH, '*.js').replace('\\', '/'), recursive=True))
+        config['extra_css'].extend(
+            glob.glob(os.path.join(RESOURCE_PATH, '*.css').replace('\\', '/'), recursive=True)
+        )
+        config['extra_javascript'].extend(
+            glob.glob(os.path.join(RESOURCE_PATH, '*.js').replace('\\', '/'), recursive=True)
+        )
         return config
