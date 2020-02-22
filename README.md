@@ -1,11 +1,15 @@
 # MkDocs Pymdownx Material Extras
 
-A plugin that for MkDocs and specifically the MkDocs Material Theme.
+A plugin that for MkDocs and specifically the [MkDocs Material Theme](https://github.com/squidfunk/mkdocs-material).
 
-Adds additional resources that are used in the PyMdown Extensions documentation, and other @facelessuser projects.
+Adds additional resources that are used in the PyMdown Extensions documentation, and other
+[@facelessuser](https://github.com/facelessuser) projects.
 
-While this is not specifically meant for outside consumption, and was originally written for @facelessuser projects,
+While this is not specifically meant for outside consumption, and was originally written for
+[@facelessuser](https://github.com/facelessuser) projects,
 it can be freely used if desired.
+
+Files are copied from the [pymdown-extensions project](https://github.com/facelessuser/pymdown-extensions/tree/master/docs/theme/assets/pymdownx-extras).
 
 ## Instructions
 
