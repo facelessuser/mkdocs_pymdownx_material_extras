@@ -1,2 +1,3 @@
 # mkdocs-material-custom
-Custom alterations based on Mkdocs-Material
+
+MkDocs plugin to add custom alterations to the MkDocs Material theme.
