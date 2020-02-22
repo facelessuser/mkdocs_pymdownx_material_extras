@@ -11,7 +11,7 @@ def get_version():
 
     import importlib.util
 
-    path = os.path.join(os.path.dirname(__file__), 'mkdocs_material_custom', '__meta__.py')
+    path = os.path.join(os.path.dirname(__file__), 'mkdocs_pymdownx_material_extras', '__meta__.py')
     spec = importlib.util.spec_from_file_location("__meta__", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -42,7 +42,7 @@ VER, DEVSTATUS = get_version()
 
 
 setup(
-    name='mkdocs_material_custom',
+    name='mkdocs_pymdownx_material_extras',
     version=VER,
     keywords='mkdocs plugin material',
     description='Plugin to extend MkDocs Material theme.',
@@ -54,10 +54,10 @@ setup(
     include_package_data=True,
     entry_points={
         'mkdocs.plugins': [
-            'mkdocs_material_custom = mkdocs_material_custom:MaterialCustom',
+            'mkdocs_pymdownx_material_extras = mkdocs_pymdownx_material_extras:PymdownxMaterialExtras',
         ]
     },
-    url='https://github.com/facelessuser/mkdocs-material-custom',
+    url='https://github.com/facelessuser/mkdocs_pymdownx_material_extras',
     packages=find_packages(exclude=['tools', 'test*']),
     install_requires=get_requirements("requirements/project.txt"),
     license='MIT License',
