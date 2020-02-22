@@ -19,6 +19,10 @@ class PymdownxMaterialExtras(mkdocs.plugins.BasePlugin):
         config['theme'].dirs.append(RESOURCE_PATH)
 
         # Add our extra styles and JavaScript to be included in the template.
-        config['extra_css'].extend(glob.glob(RESOURCE_PATH + '*.css').replace(base_path, '').replace('\\', '/'))
-        config['extra_javascript'].extend(glob.glob(RESOURCE_PATH + '*.js').replace(base_path, '').replace('\\', '/'))
+        config['extra_css'].extend(
+            [f.replace(base_path, '').replace('\\', '/') for f in glob.glob(RESOURCE_PATH + '*.css')]
+        )
+        config['extra_javascript'].extend(
+            [f.replace(base_path, '').replace('\\', '/') for f in glob.glob(RESOURCE_PATH + '*.js')]
+        )
         return config
