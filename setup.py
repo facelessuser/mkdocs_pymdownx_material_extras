@@ -52,6 +52,11 @@ setup(
     author_email='Isaac.Muse@gmail.com',
     python_requires='>=3.5',
     include_package_data=True,
+    entry_points={
+        'mkdocs.plugins': [
+            'mkdocs_material_custom = mkdocs_material_custom:MaterialCustom',
+        ]
+    },
     url='https://github.com/facelessuser/mkdocs-material-custom',
     packages=find_packages(exclude=['tools', 'test*']),
     install_requires=get_requirements("requirements/project.txt"),
