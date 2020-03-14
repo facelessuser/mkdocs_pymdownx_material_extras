@@ -1,2 +1,2 @@
-mkdocs-material==5.0.0b2.post1
+mkdocs-material==5.0.0rc2
 pymdown-extensions>=7.0b2
