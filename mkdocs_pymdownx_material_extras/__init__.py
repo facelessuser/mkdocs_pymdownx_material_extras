@@ -15,7 +15,7 @@ class PymdownxMaterialExtras(mkdocs.plugins.BasePlugin):
 
 
         # Add our theme resources to the theme path.
-        config['theme'].dirs.append(RESOURCE_PATH)
+        config['theme'].dirs.insert(0, RESOURCE_PATH)
 
         base_path = RESOURCE_PATH.replace('\\', '/') + '/'
 
