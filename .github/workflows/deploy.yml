@@ -15,16 +15,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: actions/setup-python@v1
         with:
-          python-version: 3.7
+          python-version: 3.8
       - name: Package
         run: |
           pip install --upgrade setuptools wheel
           python setup.py ${{ matrix.distribution }}
       - name: Publish
-        uses: pypa/gh-action-pypi-publish@v1.0.0a0
+        uses: pypa/gh-action-pypi-publish@v1.3.1
         with:
           user: __token__
           password: ${{ secrets.PYPI_PWD }}
