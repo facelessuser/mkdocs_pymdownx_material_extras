@@ -27,7 +27,7 @@ class PymdownxMaterialExtras(mkdocs.plugins.BasePlugin):
                 config['extra_css'].append(name)
 
         extras = set(config['extra_javascript'])
-        for f in glob.glob(base_path + '**/*.js', recursive=True):
+        for f in glob.glob(base_path + '**/extra*.js', recursive=True):
             name = f.replace('\\', '/').replace(base_path, '')
             if name not in extras:
                 config['extra_javascript'].append(name)
