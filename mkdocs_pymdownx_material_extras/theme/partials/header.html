@@ -39,7 +39,7 @@
           title="Light mode"
           class="light-mode"
         >
-        {% set icon = "material/white-balance-sunny" %}
+        {% set icon = "material/weather-sunny" %}
         {% include ".icons/" ~ icon ~ ".svg" %}
         </a>
         <a
@@ -56,6 +56,14 @@
           class="system-mode"
         >
         {% set icon = "material/theme-light-dark" %}
+        {% include ".icons/" ~ icon ~ ".svg" %}
+        </a>
+         <a
+          href="javascript:toggleScheme();"
+          title="Unknown scheme"
+          class="unknown-mode"
+        >
+        {% set icon = "material/help-circle" %}
         {% include ".icons/" ~ icon ~ ".svg" %}
         </a>
     </div>
