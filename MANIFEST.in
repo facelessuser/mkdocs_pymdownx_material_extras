@@ -1,6 +1,8 @@
 recursive-include mkdocs_pymdownx_material_extras *.py *.svg *.js *.css *.txt *.html
 recursive-include requirements *.txt
 include setup.py
+include setup.cfg
 include LICENSE.md
 include README.md
 include MANIFEST.in
+include pyproject.toml
