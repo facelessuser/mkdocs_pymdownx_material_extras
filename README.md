@@ -20,7 +20,7 @@ Installation:
 pip install mkdocs_pymdownx_material_extras
 ```
 
-Add it to your your `mkdocs.yml` plugins. It is assuming you are using MkDocs Material. When doing so, remember to add
+Add it to your `mkdocs.yml` plugins. It is assuming you are using MkDocs Material. When doing so, remember to add
 back the `search` plugin as it doesn't append to the plugins, but overrides the plugins:
 
 ```yml
