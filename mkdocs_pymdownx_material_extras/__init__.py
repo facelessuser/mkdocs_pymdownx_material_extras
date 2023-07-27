@@ -1,9 +1,11 @@
 """Mkdocs material Custom."""
-from .__meta__ import __version__, __version_info__  # noqa: F401
+from .__meta__ import __version__, __version_info__, parse_version  # noqa: F401
 import glob
 import os
 import mkdocs.plugins
+import mkdocs
 
+MKDOCS_150 = parse_version(mkdocs.__version__) >= (1, 5, 0)
 RESOURCE_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'theme')
 
 
@@ -12,7 +14,6 @@ class PymdownxMaterialExtras(mkdocs.plugins.BasePlugin):
 
     def on_config(self, config, **kwargs):
         """Add additional assets."""
-
 
         # Add our theme resources to the theme path.
         config['theme'].dirs.insert(0, RESOURCE_PATH)
@@ -26,10 +27,19 @@ class PymdownxMaterialExtras(mkdocs.plugins.BasePlugin):
             if name not in extras:
                 config['extra_css'].append(name)
 
-        extras = set(config['extra_javascript'])
-        for f in glob.glob(base_path + '**/extra*.js', recursive=True):
-            name = f.replace('\\', '/').replace(base_path, '')
-            if name not in extras:
-                config['extra_javascript'].append(name)
+        if MKDOCS_150:
+            from mkdocs.config.config_options import ExtraScriptValue
+
+            extras = set(script.path for script in config['extra_javascript'])
+            for f in glob.glob(base_path + '**/extra*.js', recursive=True):
+                name = f.replace('\\', '/').replace(base_path, '')
+                if name not in extras:
+                    config['extra_javascript'].append(ExtraScriptValue(name))
+        else:
+            extras = set(config['extra_javascript'])
+            for f in glob.glob(base_path + '**/extra*.js', recursive=True):
+                name = f.replace('\\', '/').replace(base_path, '')
+                if name not in extras:
+                    config['extra_javascript'].append(name)
 
         return config
