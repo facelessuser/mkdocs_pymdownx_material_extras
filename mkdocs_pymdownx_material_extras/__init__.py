@@ -30,7 +30,9 @@ class PymdownxMaterialExtras(mkdocs.plugins.BasePlugin):
         if MKDOCS_150:
             from mkdocs.config.config_options import ExtraScriptValue
 
-            extras = set(script.path for script in config['extra_javascript'])
+            extras = set(
+                script.path if not isinstance(script, str) else script for script in config['extra_javascript']
+            )
             for f in glob.glob(base_path + '**/extra*.js', recursive=True):
                 name = f.replace('\\', '/').replace(base_path, '')
                 if name not in extras:
