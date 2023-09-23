@@ -1,7 +1,53 @@
 [build-system]
 requires = [
-    "setuptools>=42",
-    "wheel"
+    "hatchling>=0.21.1",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "mkdocs_pymdownx_material_extras"
+description = "Plugin to extend MkDocs Material theme."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+authors = [
+    { name = "Isaac Muse", email = "Isaac.Muse@gmail.com" },
+]
+keywords = [
+    "extensions",
+    "markdown",
+]
+dynamic = [
+    "classifiers",
+    "version",
 ]
 
-build-backend = "setuptools.build_meta"
+dependencies = [
+    "mkdocs-material>=8.3.3"
+]
+
+[project.urls]
+Homepage = "https://github.com/facelessuser/mkdocs_pymdownx_material_extras"
+
+# 'mkdocs_pymdownx_material_extras = mkdocs_pymdownx_material_extras:PymdownxMaterialExtras',
+
+[tool.hatch.version]
+source = "code"
+path = "mkdocs_pymdownx_material_extras/__meta__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/mkdocs_pymdownx_material_extras/**/*.py",
+    "/mkdocs_pymdownx_material_extras/**/*.html",
+    "/mkdocs_pymdownx_material_extras/**/*.css",
+    "/mkdocs_pymdownx_material_extras/**/*.js",
+    "/LICENSE.md",
+    "/README.md"
+]
+
+[tool.hatch.build.targets.wheel]
+include = [
+    "/mkdocs_pymdownx_material_extras",
+]
+
+[tool.hatch.metadata.hooks.custom]
