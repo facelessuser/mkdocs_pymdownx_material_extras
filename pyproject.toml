@@ -41,7 +41,6 @@ include = [
     "/mkdocs_pymdownx_material_extras/**/*.html",
     "/mkdocs_pymdownx_material_extras/**/*.css",
     "/mkdocs_pymdownx_material_extras/**/*.js",
-    "/mkdocs_pymdownx_material_extras/**/*.map",
     "/LICENSE.md",
     "/README.md"
 ]
