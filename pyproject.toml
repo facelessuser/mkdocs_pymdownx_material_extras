@@ -29,7 +29,8 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/facelessuser/mkdocs_pymdownx_material_extras"
 
-# 'mkdocs_pymdownx_material_extras = mkdocs_pymdownx_material_extras:PymdownxMaterialExtras',
+[project.entry-points.plugin-namespace]
+mkdocs_pymdownx_material_extras = "mkdocs_pymdownx_material_extras:PymdownxMaterialExtras"
 
 [tool.hatch.version]
 source = "code"
