@@ -78,7 +78,7 @@ Mermaid support is baked in. Simply add the Mermaid script to your MkDocs config
 
 ```yml
 extra_javascript:
-  - https://unpkg.com/mermaid@8.8.4/dist/mermaid.min.js
+  - https://cdn.jsdelivr.net/npm/mermaid@11.3.0/dist/mermaid.min.js
 ```
 
 If you do not like our default setup, you are free to modify it. Simply provide a script file before before you include
@@ -87,7 +87,7 @@ Mermaid with the new config:
 ```yml
 extra_javascript:
   - my_mermaid_config.js
-  - https://unpkg.com/mermaid@8.8.4/dist/mermaid.min.js
+  - https://cdn.jsdelivr.net/npm/mermaid@11.3.0/dist/mermaid.min.js
 ```
 Also, setup your Mermaid diagrams:
 
@@ -120,13 +120,15 @@ MathJax:
 
 ```yml
 extra_javascript:
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 ```
 
 KaTeX:
 
 ```yml
+extra_css:
+  - https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css
+
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js
 ```
@@ -145,6 +147,5 @@ If you do not like the default MathJax setup, add your own config before MathJax
 ```yml
 extra_javascript:
   - my_mathjax_config.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 ```
