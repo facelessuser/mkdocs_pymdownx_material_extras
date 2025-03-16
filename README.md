@@ -78,7 +78,7 @@ Mermaid support is baked in. Simply add the Mermaid script to your MkDocs config
 
 ```yml
 extra_javascript:
-  - https://cdn.jsdelivr.net/npm/mermaid@11.3.0/dist/mermaid.min.js
+  - https://cdn.jsdelivr.net/npm/mermaid@11.5.0/dist/mermaid.min.js
 ```
 
 If you do not like our default setup, you are free to modify it. Simply provide a script file before before you include
@@ -87,7 +87,7 @@ Mermaid with the new config:
 ```yml
 extra_javascript:
   - my_mermaid_config.js
-  - https://cdn.jsdelivr.net/npm/mermaid@11.3.0/dist/mermaid.min.js
+  - https://cdn.jsdelivr.net/npm/mermaid@11.5.0/dist/mermaid.min.js
 ```
 Also, setup your Mermaid diagrams:
 
